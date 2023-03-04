@@ -3,27 +3,28 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as firefoxOptions
 from selenium.webdriver.chrome.options import Options as chromeOptions
 
+LANGUAGES = ['ru', 'en', 'fr', 'es']
 
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default=None,
                      help="Choose browser: chrome or firefox")
-    parser.addoption('--locale', action='store', default='en-us',
-                     help="Choose locale: es or ru")
+    parser.addoption('--language', action='store', default='en',
+                     help=f"Choose language: {LANGUAGES}")
 
 
 @pytest.fixture(scope="function")
 def browser(request):
     browser_name = request.config.getoption("browser_name")
-    locale = request.config.getoption("locale")
+    language = request.config.getoption("language")
     browser = None
     if browser_name == "chrome":
         options = chromeOptions()
-        options.add_experimental_option('prefs', {'intl.accept_languages': locale})
+        options.add_experimental_option('prefs', {'intl.accept_languages': language})
         print("\nstart chrome browser for test..")
         browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         options = firefoxOptions()
-        options.set_preference("intl.accept_languages", locale)
+        options.set_preference("intl.accept_languages", language)
         print("\nstart firefox browser for test..")
         browser = webdriver.Firefox(options=options)
     else:
