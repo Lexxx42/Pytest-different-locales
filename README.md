@@ -26,5 +26,7 @@ pip install -r requirements.txt
 
 8. Run the following command to start the tests
 
-
+```shell
+pytest -s -v --browser_name=firefox --locale=es test_parser.py
+```
 
