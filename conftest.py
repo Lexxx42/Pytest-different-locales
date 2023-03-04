@@ -9,6 +9,7 @@ LANGUAGES = ['ru', 'en', 'fr', 'es']
 
 
 def pytest_addoption(parser):
+    ''' Pars command line options. '''
     parser.addoption('--browser_name', action='store', default=None,
                      help="Choose browser: chrome or firefox")
     parser.addoption('--language', action='store', default='en',
@@ -17,6 +18,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope='function')
 def browser(request):
+    ''' Browser configuration. '''
     browser_name = request.config.getoption('browser_name')
     language = request.config.getoption('language')
     browser = None
