@@ -10,7 +10,7 @@ LANGUAGES = ['ru', 'en', 'fr', 'es']
 
 def pytest_addoption(parser):
     ''' Pars command line options. '''
-    parser.addoption('--browser_name', action='store', default=None,
+    parser.addoption('--browser_name', action='store', default='chrome',
                      help="Choose browser: chrome or firefox")
     parser.addoption('--language', action='store', default='en',
                      help=f'Choose language: {LANGUAGES}')
