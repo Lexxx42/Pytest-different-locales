@@ -33,6 +33,21 @@ pip install -r requirements.txt
 8. Run the following command to start the tests
 
 ```shell
+pytest -s -v --browser_name=chrome --locale=es test_items.py
+```
+
+9. You can change webdriver to firefox
+
+```shell
 pytest -s -v --browser_name=firefox --locale=es test_items.py
 ```
 
+9. You can change language to
+
+```python
+['ru', 'en', 'fr', 'es']
+```
+
+```shell
+pytest -s -v --browser_name=chrome --locale=fr test_items.py
+```
