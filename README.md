@@ -13,7 +13,13 @@ git clone https://github.com/Lexxx42/Pytest-different-locales.git
 
 3. Install [Python 3.11](https://www.python.org/downloads/) if you haven't already
 4. Install [ChromeDriver](https://chromedriver.chromium.org/downloads)
+
++ Work tested for Chrome Version 110.0.5481.178 (Official Build) (64-bit)
+
 5. Install [GeckoDriver](https://github.com/mozilla/geckodriver/releases/)
+
++ Work tested for Firefox Version 110.0 (64-bit)
+
 6. Add drivers to the Environment Variables based on your OS settings
 
 + [Windows] [computerhope](https://www.computerhope.com/issues/ch000549.htm)
